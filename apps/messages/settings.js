@@ -8,13 +8,13 @@
     if (settings.repeat===undefined) settings.repeat=4;
     if (settings.repeatCalls===undefined) settings.repeatCalls=settings.repeat;
     if (settings.vibrateTimeout===undefined) settings.vibrateTimeout=60;
-    if (settings.unreadTimeout===undefined) settings.unreadTimeout=60;
+    if (settings.unreadTimeout===undefined) settings.unreadTimeout=3600;
     if (settings.maxMessages===undefined) settings.maxMessages=3;
     if (settings.iconColorMode === undefined) settings.iconColorMode = iconColorModes[0];
     if (settings.ignoreUnread === undefined) settings.ignoreUnread = 0;
     settings.unlockWatch=!!settings.unlockWatch;
     settings.openMusic=!!settings.openMusic;
-    settings.maxUnreadTimeout=240;
+    settings.maxUnreadTimeout=43200;
     if (settings.flash===undefined) settings.flash=true;
     return settings;
   }
