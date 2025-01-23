@@ -32,7 +32,7 @@ function drawEventHeader(event, y) {
     x = 13*timeStr.length+5;
   }
 
-  g.setFont("12x20", 1);
+  g.setFont("12x20", 1.5);
 
   if (isActive(event)) {
     g.drawString(zp(time.getDate())+". " + require("locale").month(time,1),x,y);
