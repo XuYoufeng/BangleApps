@@ -1,5 +1,5 @@
 (() => {
-  var width = 32; // width of the widget
+  var width = 150; // width of the widget
 
   function draw() {
     var date = new Date();
@@ -14,9 +14,16 @@
     //g.drawRect(this.x, this.y, this.x+width-2, this.y+1);
   }
 
+// Time display
+    var timeText = date.getHours().toString().padStart(2, '0') + 
+                   ":" + 
+                   date.getMinutes().toString().padStart(2, '0');
+    g.setFont("Vector", 24);
+    g.drawString(timeText, this.x+width/2+1, this.y + 55);
+  
   setInterval(function() {
     WIDGETS["widday"].draw(WIDGETS["widdateday"]);
-  }, 10*60000); // update every 10 minutes
+  }, 1*60000); // update every 1 minute(s)
 
   // add your widget
   WIDGETS["widday"]={
