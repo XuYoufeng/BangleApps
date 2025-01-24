@@ -34,7 +34,7 @@
       'Autoclear after': {
         value: settings.autoclear,
         min: 0,
-        max: 3600,
+        max: 36000,
         step: 10,
         format: v=>v>0?v+"s":"Off",
         onchange: v => {
