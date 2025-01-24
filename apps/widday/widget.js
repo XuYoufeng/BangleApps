@@ -1,5 +1,5 @@
 (() => {
-  var width = 150; // width of the widget
+  var width = 240; // width of the widget
 
   function draw() {
     var date = new Date();
@@ -7,19 +7,17 @@
     g.setFontAlign(0,1); // center fonts    
     //g.drawRect(this.x, this.y, this.x+width-1, this.y+23);  // check the bounds!    
 
-    var text = date.getDate();
+    var dateText = date.getDate();
+    // Time display
+    var timeText = date.getHours().toString().padStart(2, '0') + 
+                   ":" + 
+                   date.getMinutes().toString().padStart(2, '0');
+    var text = dateText + "      " + timeText
     g.setFont("Vector", 24);
     g.drawString(text, this.x+width/2+1, this.y + 28);
     //g.setColor(0, 0, 1);
     //g.drawRect(this.x, this.y, this.x+width-2, this.y+1);
   }
-
-// Time display
-    var timeText = date.getHours().toString().padStart(2, '0') + 
-                   ":" + 
-                   date.getMinutes().toString().padStart(2, '0');
-    g.setFont("Vector", 24);
-    g.drawString(timeText, this.x+width/2+1, this.y + 55);
   
   setInterval(function() {
     WIDGETS["widday"].draw(WIDGETS["widdateday"]);
