@@ -55,7 +55,7 @@ const show = function(){
   if (ovr.getBPP() == 1) {
     img.palette = new Uint16Array([g.theme.fg,g.theme.bg]);
   }
-  Bangle.setLCDOverlay(img, ovrx, 0, {id:"messagesoverlay", remove:cleanup});
+  Bangle.setLCDOverlay(img, 0, 0, {id:"messagesoverlay", remove:cleanup});
 };
 
 const manageEvent = function(event) {
