@@ -1,5 +1,5 @@
 (() => {
-  var width = 160; // width of the widget
+  var width = 150; // width of the widget
 
   function draw() {
     var date = new Date();
@@ -12,7 +12,7 @@
     var timeText = date.getHours().toString().padStart(2, '0') + 
                    ":" + 
                    date.getMinutes().toString().padStart(2, '0');
-    var text = dateText + "      " + timeText
+    var text = dateText + "    " + timeText
     g.setFont("Vector", 24);
     g.drawString(text, this.x+width/2+1, this.y + 28);
     //g.setColor(0, 0, 1);
