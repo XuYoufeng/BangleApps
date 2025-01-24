@@ -133,7 +133,7 @@ const drawScreen = function(title, src, iconcolor, icon){
   setColors(true);
   ovr.clearRect(2,2,ovr.getWidth()-3, DIVIDER - 1);
 
-  ovr.setFont(settings.fontSmall);
+  ovr.setFont(settings.fontMedium);
   ovr.setFontAlign(0,-1);
 
   const textCenter = (ovr.getWidth()+34-24)/2-1;
@@ -167,7 +167,7 @@ const drawScreen = function(title, src, iconcolor, icon){
 };
 
 const drawSource = function(src, center, w, y, align) {
-  ovr.setFont(settings.fontSmall);
+  ovr.setFont(settings.fontMedium);
   while (ovr.stringWidth(src) > w) src = src.substring(0,src.length-2);
   if (src.length != src.length) src += "...";
   ovr.setFontAlign(0,align);
