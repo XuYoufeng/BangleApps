@@ -1,5 +1,5 @@
 (() => {
-  var width = 240; // width of the widget
+  var width = 160; // width of the widget
 
   function draw() {
     var date = new Date();
