@@ -35,7 +35,7 @@ settings = Object.assign({
 
 const ovrx = settings.border;
 const ovry = ovrx;
-const ovrw = g.getWidth()-2*ovrx;
+const ovrw = g.getWidth();
 const ovrh = g.getHeight()-2*ovry;
 
 let LOG=()=>{};
