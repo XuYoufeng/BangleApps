@@ -367,6 +367,7 @@ function showMessage(msgid, persist) {
     body = title;
     title = undefined;
   }
+  /*
   if (title) {
     var w = g.getWidth()-48;
     if (g.setFont(titleFont).stringWidth(title) > w) {
@@ -387,6 +388,7 @@ function showMessage(msgid, persist) {
         bodyFont = fontMedium;
       }
     }
+    */
     // Now crop, given whatever font we have available
     lines = g.setFont(bodyFont).wrapString(body, w);
     var maxLines = Math.floor(h / g.getFontHeight());
