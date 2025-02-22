@@ -8,13 +8,13 @@
     if (settings.repeat===undefined) settings.repeat=4;
     if (settings.repeatCalls===undefined) settings.repeatCalls=settings.repeat;
     if (settings.vibrateTimeout===undefined) settings.vibrateTimeout=60;
-    if (settings.unreadTimeout===undefined) settings.unreadTimeout=60;
-    if (settings.maxMessages===undefined) settings.maxMessages=3;
+    if (settings.unreadTimeout===undefined) settings.unreadTimeout=60000;
+    if (settings.maxMessages===undefined) settings.maxMessages=5;
     if (settings.iconColorMode === undefined) settings.iconColorMode = iconColorModes[0];
     if (settings.ignoreUnread === undefined) settings.ignoreUnread = 0;
     settings.unlockWatch=!!settings.unlockWatch;
     settings.openMusic=!!settings.openMusic;
-    settings.maxUnreadTimeout=240;
+    settings.maxUnreadTimeout=60000;
     if (settings.flash===undefined) settings.flash=true;
     return settings;
   }
@@ -49,14 +49,14 @@
     },
     /*LANG*/'Unread timer': {
       value: settings.unreadTimeout,
-      min: 0, max: settings.maxUnreadTimeout, step : 10,
+      min: 0, max: settings.maxUnreadTimeout, step : 1000,
       format: v => v?v+"s":/*LANG*/"Off",
       onchange: v => updateSetting("unreadTimeout", v)
     },
     /*LANG*/'Min Font': {
       value: 0|settings.fontSize,
       min: 0, max: 1,
-      format: v => [/*LANG*/"Small",/*LANG*/"Medium"][v],
+      format: v => [/*LANG*/"Medium",/*LANG*/"Large"][v],
       onchange: v => updateSetting("fontSize", v)
     },
     /*LANG*/'Auto-Open Unread Msg': {
@@ -85,7 +85,7 @@
     },
     /*LANG*/'Widget messages': {
       value:0|settings.maxMessages,
-      min: 0, max: 5,
+      min: 0, max: 10,
       format: v => v ? v :/*LANG*/"Hide",
       onchange: v => updateSetting("maxMessages", v)
     },
