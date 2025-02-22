@@ -379,7 +379,7 @@ function showMessage(msgid, persist) {
     */
     if (g.setFont(titleFont).stringWidth(title) > w) {
       lines = g.wrapString(title, w);
-      title = (lines.length>2) ? lines.slice(0,2).join("\n")+"..." : lines.join("\n");
+      title = (lines.length>1) ? lines.slice(0,1).join("\n")+"..." : lines.join("\n");
     }
   }
   if (body) { // Try and find a font that fits...
