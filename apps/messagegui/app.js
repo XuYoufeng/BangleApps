@@ -367,14 +367,16 @@ function showMessage(msgid, persist) {
     body = title;
     title = undefined;
   }
-  /*
+  
   if (title) {
     var w = g.getWidth()-48;
+    /*  
     if (g.setFont(titleFont).stringWidth(title) > w) {
       titleFont = fontBig;
       if (settings.fontSize!=1 && g.setFont(titleFont).stringWidth(title) > w)
         titleFont = fontMedium;
     }
+    */
     if (g.setFont(titleFont).stringWidth(title) > w) {
       lines = g.wrapString(title, w);
       title = (lines.length>2) ? lines.slice(0,2).join("\n")+"..." : lines.join("\n");
@@ -382,11 +384,11 @@ function showMessage(msgid, persist) {
   }
   if (body) { // Try and find a font that fits...
     var w = g.getWidth()-2, h = Bangle.appRect.h-60;
+    /*
     if (g.setFont(bodyFont).wrapString(body, w).length*g.getFontHeight() > h) {
       bodyFont = fontBig;
       if (settings.fontSize!=1 && g.setFont(bodyFont).wrapString(body, w).length*g.getFontHeight() > h) {
         bodyFont = fontMedium;
-      }
     }
     */
     // Now crop, given whatever font we have available
