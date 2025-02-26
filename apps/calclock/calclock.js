@@ -4,7 +4,7 @@ var next = [];
 
 function updateCalendar() {
   calendar = require("Storage").readJSON("android.calendar.json",true)||[];
-  calendar = calendar.filter(e => isActive(e) || getTime() <= e.timestamp);
+  calendar = calendar.filter(e => !e.allDay && isActive(e) || getTime() <= e.timestamp);
   calendar.sort((a,b) => a.timestamp - b.timestamp);
 
   current = calendar.filter(isActive);
@@ -25,7 +25,7 @@ function drawEventHeader(event, y) {
 
   //Don't need to know what time the event is at if its all day
   if (isActive(event) || !event.allDay) {
-    g.setFont("Vector", 24);
+    g.setFont("Vector", 30);
     var timeStr = zp(time.getHours()) + ":" + zp(time.getMinutes());
     g.drawString(timeStr, 0, y);
     y += 3;
