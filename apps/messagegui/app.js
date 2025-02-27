@@ -29,7 +29,8 @@ try { reply = require("reply"); } catch (e) {}
 var fontSmall = "6x8";
 var fontMedium = g.getFonts().includes("6x15")?"6x15":"6x8:2";
 var fontBig = g.getFonts().includes("12x20")?"12x20":"6x8:2";
-var fontLarge = g.getFonts().includes("12x20")?"12x20":"6x8:2";
+var fontLarge = g.setFont("Vector",30);
+//var fontLarge = g.getFonts().includes("12x20")?"12x20":"6x8:2";
 //var fontLarge = g.getFonts().includes("6x15")?"6x15:2":"6x8:4";
 var fontVLarge = g.getFonts().includes("6x15")?"12x20:2":"6x8:5";
 
@@ -447,9 +448,10 @@ function showMessage(msgid, persist) {
   layout = new Layout({ type:"v", c: [
     {type:"h", fillx:1, bgCol:g.theme.bg2, col: g.theme.fg2,  c: [
       { type:"v", fillx:1, c: [
-        {type:"txt", font:fontSmall, label:msg.src||/*LANG*/"Message", bgCol:g.theme.bg2, col: g.theme.fg2, fillx:1, pad:2, halign:1 },
+       // {type:"txt", font:fontSmall, label:msg.src||/*LANG*/"Message", bgCol:g.theme.bg2, col: g.theme.fg2, fillx:1, pad:2, halign:1 },
         title?{type:"txt", font:titleFont, label:title, bgCol:g.theme.bg2, col: g.theme.fg2, fillx:1, pad:2 }:{},
       ]},
+      /*
       { type:"btn",
         src:require("messageicons").getImage(msg),
         col:require("messageicons").getColor(msg, {settings, default:g.theme.fg2}),
@@ -457,7 +459,7 @@ function showMessage(msgid, persist) {
           cancelReloadTimeout(); // don't auto-reload to clock now
           showMessageSettings(msg);
         }
-      },
+      },  */
     ]},
     {type:"txt", font:bodyFont, label:body, fillx:1, filly:1, pad:2, cb:()=>{
       // allow tapping to show a larger version
