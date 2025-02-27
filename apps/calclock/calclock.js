@@ -35,13 +35,13 @@ function drawEventHeader(event, y) {
   g.setFont("12x20", 1);
 
   if (isActive(event)) {
-    g.drawString(zp(time.getDate())+". " + require("locale").month(time,1),x+5,y);
+    g.drawString(zp(time.getDate())+". " + require("locale").month(time,1),x+10,y);
   } else {
     var offset = 0-time.getTimezoneOffset()/1440;
     var days = Math.floor((time.getTime()/1000)/86400+offset)-Math.floor(getTime()/86400+offset);
     if(days > 0 || event.allDay) {
       var daysStr = days===1?/*LANG*/"tomorrow":/*LANG*/"in "+days+/*LANG*/" days";
-      g.drawString(daysStr,x+5,y);
+      g.drawString(daysStr,x+10,y);
     }
   }
   y += 21;
