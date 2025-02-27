@@ -29,7 +29,7 @@ function drawEventHeader(event, y) {
     var timeStr = zp(time.getHours()) + ":" + zp(time.getMinutes());
     g.drawString(timeStr, 0, y);
     y += 3;
-    x = 13*timeStr.length+5;
+    x = 13*timeStr.length+10;
   }
 
   g.setFont("12x20", 1);
