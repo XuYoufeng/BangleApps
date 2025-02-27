@@ -8,7 +8,7 @@ function updateCalendar() {
   calendar.sort((a,b) => a.timestamp - b.timestamp);
 
   current = calendar.filter(isActive);
-  next = calendar.filter(e=>!isActive(e));
+  next = calendar.filter(e=>!isActive(e) && !e.allDay);
 }
 
 function isActive(event) {
