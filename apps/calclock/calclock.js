@@ -150,6 +150,6 @@ Bangle.setUI("clock");
 Bangle.loadWidgets();
 Bangle.drawWidgets();
 
-Bangle.on('touch', function(button) {
+Bangle.on('touch', function() {
   fullRedraw();
 });
