@@ -148,3 +148,7 @@ buzzForEvents();
 Bangle.setUI("clock");
 Bangle.loadWidgets();
 Bangle.drawWidgets();
+
+Bangle.on('touch', function(button) {
+  fullRedraw();
+});
