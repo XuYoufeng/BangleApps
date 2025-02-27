@@ -25,15 +25,15 @@ function drawEventHeader(event, y) {
 
   //Don't need to know what time the event is at if its all day
   if (isActive(event) || !event.allDay) {
-    g.setFont("Vector", 30);
+    g.setFont("Vector", 28);
     var timeStr = zp(time.getHours()) + ":" + zp(time.getMinutes());
     g.drawString(timeStr, 0, y);
     y += 3;
     x = 13*timeStr.length+10;
   }
 
-  g.setFont("12x20", 1);
-
+  //g.setFont("12x20", 1);
+  g.setFont("Vector", 18);
   if (isActive(event)) {
     g.drawString(zp(time.getDate())+". " + require("locale").month(time,1),x+10,y);
   } else {
@@ -49,7 +49,8 @@ function drawEventHeader(event, y) {
 }
 
 function drawEventBody(event, y) {
-  g.setFont("12x20", 1);
+  //g.setFont("12x20", 1);
+  g.setFont("Vector", 18);
   var lines = g.wrapString(event.title, g.getWidth()-15);
   var yStart = y;
   if (lines.length > 2) {
