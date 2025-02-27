@@ -58,13 +58,13 @@ function drawEventBody(event, y) {
   }
   g.drawString(lines.join('\n'),10,y);
   y+=20 * lines.length;
-  if(event.location) {
+ /* if(event.location) {
     g.drawImage(atob("DBSBAA8D/H/nDuB+B+B+B3Dn/j/B+A8A8AYAYAYAAAAAAA=="),10,y);
     var loclines = g.wrapString(event.location, g.getWidth()-30);
     if(loclines.length>1) loclines[0] += "...";
     g.drawString(loclines[0],25,y);
     y+=20;
-  }
+  } */
   if (event.color) {
     var oldColor = g.getColor();
     g.setColor("#"+(0x1000000+Number(event.color)).toString(16).padStart(6,"0"));
